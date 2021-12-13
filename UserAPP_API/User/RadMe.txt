@@ -1,0 +1,3 @@
+
+Please change the Uri BaseAddress of GlobalVariables class in services folder of UserAPP and insert 
+the ProjectUrl of UserAPI here to run the project.

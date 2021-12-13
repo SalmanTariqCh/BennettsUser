@@ -1,0 +1,48 @@
+﻿@model IEnumerable<UserAPP.Models.User>
+
+@{
+    ViewBag.Title = "List of User";
+}
+
+<h2>List of User</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id, new { @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName, new { @readonly = "readonly" })
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName, new { @readonly = "readonly" })
+    </td>
+    <td>
+        @{
+            var DOBdt = item.DOB.ToString("yyy.MM.dd");
+        }
+        @Html.DisplayFor(modelItem => DOBdt, new { @readonly = "readonly" })
+    </td>
+</tr>
+}
+
+</table>
